@@ -13,6 +13,7 @@
   --second-background-color: #f5f4fa;
   --dark-background-color: #2f303a;
   --accent-color: #2196f3;
+  --accent-color-2: #188ce8;
   --opasity-light-color: rgba(255, 255, 255, 0.6);
   --border-color: #eeeeee;
   --border-header-color: #ececec;
@@ -255,6 +256,7 @@ nav {
 /* backdrop */
 
 .backdrop {
+  z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
@@ -277,14 +279,18 @@ nav {
 }
 
 .modal {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
   position: absolute;
   top: 50%;
   left: 50%;
 
   min-height: 581px;
   min-width: 528px;
-  padding: 15px;
 
   background-color: var(--primary-white-color);
 
@@ -305,6 +311,155 @@ nav {
   border-radius: 50%;
   background-color: var(--primary-white-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.close-button:hover .close__icon {
+  fill: var(--accent-color-2);
+}
+/* Modal-Forms */
+
+.form-field {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+
+  margin-top: 10px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  /* identical to box height */
+
+  letter-spacing: 0.01em;
+
+  color: var(--primary-text-color);
+}
+
+.form-field input,
+textarea {
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+}
+.form-field input {
+  margin-top: 4px;
+  padding-left: 42px;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+.modal b {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  margin-bottom: 2px;
+
+  color: var(--title-text-color);
+}
+
+.comment {
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+.comment::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+.agreement {
+  color: var(--accent-color);
+}
+.send-button {
+  display: flex;
+  width: 200px;
+  height: 50px;
+  margin-top: 30px;
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.88;
+  /* identical to box height, or 187% */
+  letter-spacing: 0.06em;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: transparent;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.send-button:hover {
+  background-color: var(--accent-color-2);
+}
+
+.form__input:hover,
+.comment:hover,
+.form__input:focus,
+.comment:focus,
+.form__input:focus-visible,
+.comment:focus-visible {
+  border-color: #2196f3;
+}
+.form__input:focus-visible,
+.comment:focus-visible {
+  outline: 1px solid #2196f3;
+}
+.form__input:hover + .form__icon,
+.form__input:focus + .form__icon {
+  fill: #2196f3;
+}
+.form__icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  fill: var(--title-text-color);
+}
+.form-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+  margin-top: 20px;
+}
+.checkbox {
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  position: absolute; */
+
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.agree-check-border {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+
+  cursor: pointer;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.checkbox:checked + .agree-check-border {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 /* <!-- Feature --> */
@@ -589,6 +744,67 @@ address {
 }
 .f-social-icon {
   fill: currentColor;
+}
+
+.form-signup-field {
+  display: block;
+
+  margin-left: 70px;
+
+  font-weight: bold;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+}
+
+.mail-submit {
+  display: flex;
+  margin-top: 20px;
+}
+
+.mail-submit input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  display: block;
+  padding: 15px 16px;
+  width: 358px;
+  height: 50px;
+
+  margin-right: 12px;
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #2f303a;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.mail-submit button {
+  display: flex;
+  width: 200px;
+  height: 50px;
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.88;
+  /* identical to box height, or 187% */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: transparent;
+}
+.icon-send {
+  margin-left: 10px;
 }
 
 /* Portfolio page styles */
