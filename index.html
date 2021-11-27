@@ -79,67 +79,72 @@
 
           <!-- modal -->
 
-          <b>Оставьте свои данные, мы Вам перезвоним</b>
+          <form class="modal__form">
+            <b>Оставьте свои данные, мы Вам перезвоним</b>
 
-          <label class="form-field" for="username"
-            >Имя
-            <input
-              class="form__input"
-              type="text"
-              name="username"
-              id="username"
-              autofocus
-            />
-            <svg class="form__icon" width="12" height="12">
-              <use href="./images/icons.svg#icon-user"></use>
-            </svg>
-          </label>
+            <label class="form-field" for="username"
+              >Имя
+              <input
+                class="form__input"
+                type="text"
+                name="username"
+                id="username"
+                autofocus
+              />
+              <svg class="form__icon" width="12" height="12">
+                <use href="./images/icons.svg#icon-user"></use>
+              </svg>
+            </label>
 
-          <label class="form-field" for="tel"
-            >Телефон
-            <input class="form__input" type="tel" name="tel" id="tel" />
-            <svg class="form__icon" width="13" height="13">
-              <use href="./images/icons.svg#icon-phone"></use>
-            </svg>
-          </label>
+            <label class="form-field" for="tel"
+              >Телефон
+              <input class="form__input" type="tel" name="tel" id="tel" />
+              <svg class="form__icon" width="13" height="13">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </label>
 
-          <label class="form-field" for="mail"
-            >Почта
-            <input class="form__input" type="email" name="email" id="mail" />
-            <svg class="form__icon" width="20" height="16">
-              <use href="./images/icons.svg#icon-mail"></use>
-            </svg>
-          </label>
-          <label class="form-field" for="comment"
-            >Комментарий
+            <label class="form-field" for="mail"
+              >Почта
+              <input class="form__input" type="email" name="email" id="mail" />
+              <svg class="form__icon" width="20" height="16">
+                <use href="./images/icons.svg#icon-mail"></use>
+              </svg>
+            </label>
+            <label class="form-field" for="comment"
+              >Комментарий
 
-            <textarea
-              class="comment"
-              name="comment"
-              id="comment"
-              placeholder="Введите текст"
-            ></textarea>
-          </label>
+              <textarea
+                class="comment"
+                name="comment"
+                id="comment"
+                placeholder="Введите текст"
+              ></textarea>
+            </label>
 
-          <!-- Checkbox -->
-          <label class="form-checkbox" for="checkbox">
-            <input
-              class="checkbox"
-              type="checkbox"
-              name="checkbox"
-              id="checkbox"
-            />
-            <!-- <span class="icon"></span> -->
-            <span class="agree-check-border"
-              ><svg class="agreement__icon" width="16" height="15">
-                <use href="./images/icons.svg#agree-check"></use></svg
-            ></span>
-            <p class="label-checkbox">
-              Соглашаюсь с рассылкой и принимаю
-              <a class="agreement link" href="">Условия договора</a>
-            </p>
-          </label>
-          <button class="send-button" type="submit">Отправить</button>
+            <!-- Checkbox -->
+            <div class="form-checkbox">
+              <label class="form-checkbox__label" for="checkbox">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name="checkbox"
+                  id="checkbox"
+                />
+
+                <span class="agree-check-border"
+                  ><svg class="agreement__icon" width="16" height="15">
+                    <use href="./images/icons.svg#agree-check"></use></svg
+                ></span>
+              </label>
+              <p class="form-checkbox__text">
+                Соглашаюсь с рассылкой и принимаю
+                <a class="agreement link" href="">Условия договора</a>
+              </p>
+            </div>
+
+            <button class="send-button" type="submit">Отправить</button>
+          </form>
         </div>
       </div>
 
@@ -501,11 +506,15 @@
           </ul>
         </div>
         <form class="form-signup-field">
-          <label for="mail">Подпишитесь на рассылку</label>
+          <label for="email">Подпишитесь на рассылку</label>
           <div class="mail-submit">
-            <input type="mail" name="mail" id="mail" placeholder="E-mail" />
-            <button type="submit">Подписаться <svg class="icon-send" width="24" height="24">
-                  <use href="./images/icons.svg#icon-send"></use></svg</button>
+            <input type="email" name="email" id="email" placeholder="email" />
+            <button type="submit">
+              Подписаться
+              <svg class="icon-send" width="24" height="24">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
           </div>
         </form>
       </div>

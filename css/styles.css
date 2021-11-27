@@ -318,6 +318,12 @@ nav {
 }
 /* Modal-Forms */
 
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .form-field {
   display: flex;
   position: relative;
@@ -426,6 +432,7 @@ textarea {
   /* position: relative; */
   margin-top: 20px;
 }
+
 .checkbox {
   /* -webkit-appearance: none;
   -moz-appearance: none;
